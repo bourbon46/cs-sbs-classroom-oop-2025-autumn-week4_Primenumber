@@ -23,6 +23,9 @@
 
 时间限制：500ms 内存限制：32000kb
 
+<br>
+<br>
+
 # 题目二：回文数（请在org.example.Palindrome中解答该问题）
 
 给你一个整数 x ，如果 x 是一个回文整数，返回 true ；否则，返回 false 。

@@ -8,6 +8,8 @@ jobs:
   Auto-Grading:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
       - name: Package
         run: |
           mkdir -p upload_temp

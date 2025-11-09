@@ -11,7 +11,15 @@ jobs:
       - name: Package
         run: |
           mkdir -p upload_temp
-          rsync -av --exclude='Main.java' /src/main/java/org/example/ upload_temp/
+          rsync -av --exclude='Main.java' ./src/main/java/org/example/ upload_temp/
           zip -r upload.zip upload_temp
       - name: Upload
-        run: curl -X POST https://example.com/upload -F "file=@upload.zip"
+        id: grade
+        run: |
+          response=$(curl -s -X POST "http://127.0.0.1:8000/api/grade" -F "file=@upload.zip")
+          echo "Raw response: $response"
+          echo "result=$response" >> $GITHUB_OUTPUT
+      - name: Show grading result
+        run: |
+          echo "Grading result:"
+          echo ${{ steps.grade.outputs.result }}

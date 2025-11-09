@@ -13,4 +13,3 @@ public class Palindrome {
         System.out.println(status);
     }
 }
-# 这是一行注释

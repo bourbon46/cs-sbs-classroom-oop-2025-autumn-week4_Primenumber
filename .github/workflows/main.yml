@@ -3,7 +3,7 @@ run-name: ${{ github.actor }}'s assignment is under grading
 on:
   push:
     paths:
-      - './src/main/java/org/example/*.java'
+      - 'src/main/java/org/example/*.java'
 jobs:
   Auto-Grading:
     runs-on: ubuntu-latest
